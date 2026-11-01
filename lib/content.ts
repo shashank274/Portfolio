@@ -38,11 +38,13 @@ export type Project = {
   flow: { title: string; text: string }[];
   pieces: { title: string; text: string }[];
   stack: { label: string; value: string }[];
+  demo?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "hoistra",
+    demo: "/demos/hoistra",
     step: "01",
     name: "Hoistra",
     kind: "Multi-agent platform",
@@ -112,6 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: "erp-ai",
+    demo: "/demos/erp-ai",
     step: "02",
     name: "ERP-AI suite",
     kind: "Finance automation",
@@ -176,6 +179,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pearity",
+    demo: "/demos/pearity",
     step: "03",
     name: "Pearity.ai",
     kind: "Live product · backend",
@@ -240,6 +244,7 @@ export const projects: Project[] = [
   },
   {
     slug: "trace-lab",
+    demo: "/demos/trace-lab",
     step: "04",
     name: "Trace Lab",
     kind: "AI evaluation",

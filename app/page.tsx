@@ -49,9 +49,16 @@ export default function Home() {
                     </Link>
                   </h3>
                   <p className="step-text">{p.cardText}</p>
-                  <Link href={`/projects/${p.slug}`} className="step-more">
-                    read the full trace →
-                  </Link>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 20px" }}>
+                    <Link href={`/projects/${p.slug}`} className="step-more">
+                      read the full trace →
+                    </Link>
+                    {p.demo && (
+                      <Link href={p.demo} className="step-more">
+                        ▶ try the demo
+                      </Link>
+                    )}
+                  </div>
                 </div>
                 <div className="facts">
                   {p.facts.map((f) => (

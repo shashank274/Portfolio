@@ -41,6 +41,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </p>
           <h1>{p.name}</h1>
           <p className="p-summary">{p.summary}</p>
+          {p.demo && (
+            <div className="btns">
+              <Link href={p.demo} className="btn primary">
+                Try the interactive demo →
+              </Link>
+              <span className="mono" style={{ alignSelf: "center", fontSize: 12, color: "var(--faint)" }}>
+                runs in your browser · sample data
+              </span>
+            </div>
+          )}
           <div className="meta">
             {p.meta.map((m) => (
               <div key={m.label}>
@@ -154,6 +164,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
         </section>
+
+        {p.demo && (
+          <section className="p-section" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 20 }}>
+            <div>
+              <p className="label">try_it:</p>
+              <h2 className="h2" style={{ fontSize: 40 }}>See it working</h2>
+              <p style={{ margin: "12px 0 0", fontSize: 17, color: "var(--muted)", maxWidth: 560, lineHeight: 1.6 }}>
+                A clickable version of {p.name} with made-up sample data, so you can see how it works without logging in.
+              </p>
+            </div>
+            <Link href={p.demo} className="btn primary">Open the demo →</Link>
+          </section>
+        )}
 
         <section className="p-next">
           <Link href="/#work" className="btn">

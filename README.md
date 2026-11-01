@@ -2,6 +2,10 @@
 
 Personal site built with Next.js (App Router). Dark "trace run" design: projects are shown as steps in an AI trace, and the hero has an animated diagram of how Hoistra answers a question.
 
+## Interactive demos
+
+`/demos/hoistra`, `/demos/erp-ai`, `/demos/pearity` and `/demos/trace-lab` are front-end only demos of each project. They run in the browser on made-up sample data (`components/demos/*`), with no backend and no API keys. Each project page links to its demo.
+
 ## Edit the content
 
 All text lives in `lib/content.ts`: intro, projects, project pages, about, experience, education and skills.
