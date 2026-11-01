@@ -16,7 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = projects.find((x) => x.slug === slug);
   if (!p) return {};
-  return { title: p.name, description: p.summary, openGraph: { title: p.name, description: p.summary } };
+  return {
+    title: p.name,
+    description: p.summary,
+    openGraph: { title: `${p.name} · Shashank Kanangi`, description: p.summary, url: `/projects/${p.slug}`, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", images: ["/opengraph-image"] },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

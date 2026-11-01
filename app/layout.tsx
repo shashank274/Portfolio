@@ -8,7 +8,12 @@ import "./globals.css";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000"),
+  ),
   title: { default: `${site.name} · ${site.role}`, template: `%s · ${site.name}` },
   description: site.description,
   openGraph: {
@@ -16,6 +21,7 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
     locale: "en_GB",
+    url: "/",
   },
   twitter: { card: "summary_large_image" },
 };
