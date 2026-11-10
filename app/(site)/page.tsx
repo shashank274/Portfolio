@@ -4,6 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { CountUp } from "@/components/site/CountUp";
 import { RouteLine } from "@/components/site/RouteLine";
 import { Section, SectionHead } from "@/components/site/Section";
+import Image from "next/image";
 
 const NUMBERS = [
   { v: "80%", t: "less manual bank reconciliation work after the matching engine I built" },
@@ -28,6 +29,12 @@ const EXPERIENCE = [
 const EDUCATION = [
   { d: "2026 – 2027", r: "MSc Business IT Management", o: "University of Amsterdam", t: "Amsterdam Merit Scholarship (full tuition plus a living allowance). Courses include Data Science and AI for Business, Digital Transformation, and Change Management and Consultancy." },
   { d: "2022 – 2025", r: "BSc Information Systems & Management", o: "Manipal Academy of Higher Education, Dubai", t: "CGPA 9.15/10, top 5% of the cohort. Best Poster Award for the capstone; 2nd place nationally in the MakeX Robotics Competition." },
+];
+
+const CERTS = [
+  { d: "Nov 2026", r: "AWS Certified AI Business Strategist", o: "Amazon Web Services", t: "Business track. Earned as an early adopter of the certification." },
+  { d: "Sep 2026", r: "Claude Academy: AI Fluency for Builders", o: "Anthropic" },
+  { d: "Sep 2026", r: "Claude Academy: Claude 101", o: "Anthropic" },
 ];
 
 const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition-colors";
@@ -182,9 +189,40 @@ export default function Home() {
         <Timeline items={EDUCATION} />
       </Section>
 
-      {/* 06 Skills */}
+      {/* 06 Certifications */}
+      <Section id="certifications">
+        <SectionHead n="06" title="Certifications" />
+        <div className="grid-12 gap-y-10">
+          <Reveal className="col-span-12 flex flex-col items-start gap-5 md:col-span-4">
+            <Image
+              src="/certs/aws-ai-business-strategist.png"
+              alt="AWS Certified AI Business Strategist badge"
+              width={600}
+              height={600}
+              className="h-auto w-40 md:w-52"
+            />
+            <p className="eyebrow text-accent-ink">Latest · Early adopter</p>
+          </Reveal>
+          <div className="col-span-12 md:col-span-8">
+            <ol>
+              {CERTS.map((c, i) => (
+                <Reveal as="li" key={c.r} delay={i * 60} className="grid-12 gap-y-2 border-t border-border py-7 first:border-t-0 first:pt-0 md:first:pt-2">
+                  <p className="tnum col-span-12 text-sm text-muted-foreground md:col-span-3">{c.d}</p>
+                  <div className="col-span-12 md:col-span-9">
+                    <h3 className="font-display text-3xl text-foreground">{c.r}</h3>
+                    <p className="mt-1 text-foreground">{c.o}</p>
+                    {c.t && <p className="mt-3 max-w-xl leading-relaxed text-muted-foreground">{c.t}</p>}
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </Section>
+
+      {/* 07 Skills */}
       <Section>
-        <SectionHead n="06" title="Skills" />
+        <SectionHead n="07" title="Skills" />
         <div className="grid-12 gap-y-10">
           <Reveal className="col-span-12 md:col-span-6">
             <h3 className="font-display text-3xl text-foreground">Business &amp; consulting</h3>
