@@ -1,6 +1,6 @@
 # Shashank Kanangi · portfolio
 
-Personal site built with Next.js (App Router). Dark "trace run" design: projects are shown as steps in an AI trace, and the hero has an animated diagram of how Hoistra answers a question.
+Personal site built with Next.js (App Router) and Tailwind CSS. Light editorial "two lenses" design: every project can be read through a Business lens (problem, who it was for, what changed) or a Technical lens (architecture, how it works, stack).
 
 ## Interactive demos
 
@@ -8,10 +8,10 @@ Personal site built with Next.js (App Router). Dark "trace run" design: projects
 
 ## Edit the content
 
-All text lives in `lib/content.ts`: intro, projects, project pages, about, experience, education and skills.
+Project text lives in `lib/projects.ts`. The homepage sections (hero, numbers, what I bring, about, experience, education, skills) are in `app/(site)/page.tsx`.
 
-- **Resume button:** put your PDF in `public/resume.pdf`, then set `resumeUrl: "/resume.pdf"` in `lib/content.ts`.
-- **Project links:** add them later in `lib/content.ts` when the repos or demos are public.
+- **Resume:** put your PDF in `public/resume.pdf` and add a link to it in the hero buttons in `app/(site)/page.tsx`.
+- **Project links:** add them later in `lib/projects.ts` when the repos are public.
 
 ## Run locally
 

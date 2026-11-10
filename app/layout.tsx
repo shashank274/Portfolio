@@ -1,32 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/manrope/400.css";
-import "@fontsource/manrope/600.css";
-import "@fontsource/manrope/800.css";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/600.css";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
+import "@fontsource/inter-tight/400.css";
+import "@fontsource/inter-tight/500.css";
+import "@fontsource/inter-tight/600.css";
 import "./globals.css";
-import { site } from "@/lib/content";
+
+const TITLE = "Shashank Kanangi · AI Engineer & Business Technology";
+const DESC =
+  "Data Scientist and AI Engineer. A year building AI systems for finance teams, facilities teams and marketing agencies in Dubai, now doing an MSc in Business IT Management in Amsterdam. Open to roles in the Netherlands and the UAE.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ??
-      (process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : "http://localhost:3000"),
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
   ),
-  title: { default: `${site.name} · ${site.role}`, template: `%s · ${site.name}` },
-  description: site.description,
-  openGraph: {
-    title: `${site.name} · ${site.role}`,
-    description: site.description,
-    type: "website",
-    locale: "en_GB",
-    url: "/",
-  },
+  title: { default: TITLE, template: "%s · Shashank Kanangi" },
+  description: DESC,
+  authors: [{ name: "Shashank Kanangi" }],
+  openGraph: { title: TITLE, description: DESC, type: "website", locale: "en_GB", siteName: "Shashank Kanangi", url: "/" },
   twitter: { card: "summary_large_image" },
 };
 
-export const viewport: Viewport = { themeColor: "#101012" };
+export const viewport: Viewport = { themeColor: "#F4F0E8" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

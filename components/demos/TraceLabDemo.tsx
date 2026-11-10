@@ -317,9 +317,9 @@ function JudgesView() {
         <section className="d-card" style={{ padding: 18, display: "flex", flexDirection: "column", gap: 12 }}>
           <b>Judges</b>
           {[
-            { m: "Wrong number in answer", agree: "matches reviewers on 23 of 25 labels" },
-            { m: "Mixed open and closed data", agree: "matches reviewers on 18 of 20 labels" },
-            { m: "Wrong benchmark used", agree: "matches reviewers on 11 of 12 labels" },
+            { m: "Wrong number in answer", agree: "sample: matches reviewers on 23 of 25 labels" },
+            { m: "Mixed open and closed data", agree: "sample: matches reviewers on 18 of 20 labels" },
+            { m: "Wrong benchmark used", agree: "sample: matches reviewers on 11 of 12 labels" },
           ].map((j) => (
             <div key={j.m} className="p-chk"><span className="ok">⚖</span><div><b>{j.m}</b><span>{j.agree} · ready</span></div></div>
           ))}
@@ -333,7 +333,7 @@ function JudgesView() {
               <button type="button" className="d-btn small primary" disabled={busy} onClick={() => run(2)}>Run on v2 (after fix)</button>
             </div>
           </div>
-          <span className="d-note">estimated cost per run: about $0.04</span>
+          <span className="d-note">sample golden set · cost estimate shown before each run</span>
           <div className="d-table-wrap">
             <table className="d-table" style={{ minWidth: 380 }}>
               <thead><tr><th>Case</th><th>v1</th><th>v2</th></tr></thead>
@@ -350,7 +350,7 @@ function JudgesView() {
           </div>
           {ran === 2 && !busy && (
             <p className="d-fade" style={{ margin: 0, fontSize: 14, color: "var(--muted)", lineHeight: 1.6 }}>
-              v2 passes <b style={{ color: "#8fd6a6" }}>{pass2}/{CASES.length}</b> vs {pass1}/{CASES.length} for v1. One case got worse (lift inspections), so it goes back to a reviewer before release.
+              v2 passes <b style={{ color: "#8fd6a6" }}>{pass2}/{CASES.length}</b> vs {pass1}/{CASES.length} for v1. One case got worse (lift inspections), so it goes back to a reviewer before release. (Sample cases, not real results.)
             </p>
           )}
         </section>

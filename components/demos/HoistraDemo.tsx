@@ -285,7 +285,7 @@ function ComplianceView() {
           <div className="d-card d-kpi"><span className="k">expired</span><span className="v" style={{ color: "#ff8f80" }}>{expired}</span><span className="s">needs action now</span></div>
           <div className="d-card d-kpi"><span className="k">due in 30 days</span><span className="v" style={{ color: "#ffcf7a" }}>{soon}</span><span className="s">renewals to book</span></div>
           <div className="d-card d-kpi"><span className="k">blocked vendors</span><span className="v">{vendors.filter((v) => v.blocked).length}</span><span className="s">expired accreditation</span></div>
-          <div className="d-card d-kpi"><span className="k">coverage</span><span className="v">92%</span><span className="s">required certificates on file</span></div>
+          <div className="d-card d-kpi"><span className="k">coverage</span><span className="v">92%</span><span className="s">required certificates on file (sample)</span></div>
         </div>
         <div className="d-table-wrap">
           <table className="d-table">
