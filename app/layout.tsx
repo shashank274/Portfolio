@@ -11,10 +11,7 @@ const DESC =
   "Data Scientist and AI Engineer. A year building AI systems for finance teams, facilities teams and marketing agencies in Dubai, now doing an MSc in Business IT Management in Amsterdam. Open to roles in the Netherlands and the UAE.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ??
-      (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL ? "https://shashank-k.vercel.app" : "http://localhost:3000")),
   title: { default: TITLE, template: "%s · Shashank Kanangi" },
   description: DESC,
   authors: [{ name: "Shashank Kanangi" }],
